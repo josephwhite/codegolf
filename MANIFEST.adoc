@@ -1,0 +1,73 @@
+== Yes
+
+xref:yes.ps1[]
+
+=== challenge
+
+https://man7.org/linux/man-pages/man1/yes.1.html[Yes (Unix)]
+
+=== requirements
+
+* Feature parity.
+** Repeat a string (and newline) until killing the process.
+** Argument sets string.
+** No argument sets string to 'y'.
+
+=== stats
+
+* 79 byte(s)
+
+=== example use case(s)
+
+PS> .\yes.ps1
+
+== 4 Billion If Statements
+
+xref:4billionifs.ps1[]
+
+=== challenge
+
+* https://codegolf.stackexchange.com/questions/275739/print-4-billion-if-statements[Stack Exchange]
+* https://andreasjhkarlsson.github.io/jekyll/update/2023/12/27/4-billion-if-statements.html[Blog post]
+
+=== requirements
+
+* No parameters
+* Odd or Even
+** Modulo operation (%) allowed
+* 4294967296 "segments" (unsigned int32)
+
+=== stats
+
+* 135 byte(s)
+
+=== example use
+
+PS> .\4billionifs.ps1 > foo.ps1
+
+== Incremental Game Time Format
+
+xref:incremental-game-datetime.ps1[]
+
+=== challenge
+
+https://codegolf.stackexchange.com/questions/52785/[Stack Exchange]
+
+=== requirements
+
+* Two parameters
+** Total time in seconds
+** Max number of segments
+* Print the time values in "0w 0d 0h 0m 0s" segments
+* Output must use contiguous segments
+** Segments like "0h 0s" are not valid
+* No leading zeroes
+* First segemnt printed is the first nonzero time value
+
+=== stats
+
+* 329 byte(s)
+
+=== example use
+
+See xref:tests/incremental-game-datetime.Tests.ps1[test file].

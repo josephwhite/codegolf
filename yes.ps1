@@ -1,0 +1,1 @@
+param([parameter(ValueFromRemainingArguments)][string]$y="y");while(1){echo $y}

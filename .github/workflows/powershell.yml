@@ -1,0 +1,48 @@
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  POWERSHELL_TELEMETRY_OPTOUT: 1
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test - PowerShell
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+
+      runs-on: windows-latest
+
+      steps:
+
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Install module(s)
+          shell: pwsh
+            run: |
+            Set-PSRepository PSGallery -InstallationPolicy Trusted
+            Install-Module -Name Pester -Force -Scope CurrentUser
+        - name: Run Pester Tests
+          shell: pwsh
+          # Pester results will go into a new  folder called "pester".
+          run: |
+            New-Item -Path ".\pester" -type Directory
+            .\utils\pester-agent.ps1 -TestPath ".\tests\incremental-game-datetime.Tests.ps1" -OutputFile "pester\incremental-game-datetime-pester-results.xml" -CodeCoverageFile "pester\incremental-game-datetime-pester-coverage.xml"
+        - name: Upload Pester reports
+          if: ${{ success() }}
+          uses: actions/upload-artifact@v4
+          with:
+            name: pester-report
+            path: |
+              pester/
+            if-no-files-found: warn
+            retention-days: 0
+            compression-level: 6
+            overwrite: false
+            include-hidden-files: false

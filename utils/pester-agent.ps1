@@ -18,7 +18,8 @@ param (
     [String]
     $TestPath,
 
-    [Parameter(Mandatory)]
+    [Parameter()]
+    [AllowEmptyString()]
     [String]
     $OutputFile,
 
@@ -31,9 +32,11 @@ param (
 $pesterconfig = New-PesterConfiguration
 $pesterconfig.Output.Verbosity = 'Detailed'
 $pesterconfig.Run.Path = $TestPath
-$pesterconfig.TestResult.Enabled = $true
-$pesterconfig.TestResult.OutputPath = $OutputFile
-$pesterconfig.TestResult.OutputFormat = 'NUnitXml'
+if ($OutputFile) {
+    $pesterconfig.TestResult.Enabled = $true
+    $pesterconfig.TestResult.OutputPath = $OutputFile
+    $pesterconfig.TestResult.OutputFormat = 'NUnitXml'
+}
 if ($CodeCoverageFile) {
     $pesterconfig.CodeCoverage.Enabled = $true
     $pesterconfig.CodeCoverage.OutputPath = $CodeCoverageFile

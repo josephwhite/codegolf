@@ -8,10 +8,10 @@ https://man7.org/linux/man-pages/man1/yes.1.html[Yes (Unix)]
 
 === requirements
 
-* Feature parity.
-** Repeat a string (and newline) until killing the process.
-** Argument sets string.
-** No argument sets string to 'y'.
+* Feature parity
+** Repeat a string (and newline) until killing the process
+** Argument sets string
+** No argument sets string to 'y'
 
 === stats
 
@@ -71,3 +71,50 @@ https://codegolf.stackexchange.com/questions/52785/[Stack Exchange]
 === example use
 
 See xref:tests/incremental-game-datetime.Tests.ps1[test file].
+
+== PowXn
+
+xref:PowXn.ps1[]
+
+=== challenge
+
+https://leetcode.com/problems/powx-n/description/[Leetcode]
+
+=== requirements
+
+* Two parameters
+** Base (double)
+** Exponent (int)
+* No use of "Math.pow()" or any other prexisting power operations
+
+=== stats
+
+* 194 byte(s)
+
+=== example use case(s)
+
+See xref:tests/pownx.Tests.ps1[test file].
+
+== Valid Phone Numbers
+
+xref:valid-phone-numbers.ps1[]
+
+=== challenge
+
+https://leetcode.com/problems/valid-phone-numbers/description/[Leetcode]
+
+=== requirements
+
+* Input a text file named file.txt
+* Print "valid" phone numbers from said file
+** Valid formats are the following
+*** (xxx) xxx-xxxx
+*** xxx-xxx-xxxx
+
+=== stats
+
+* 104 bytes
+
+=== example use case(s)
+
+See xref:tests/valid-phone-numbers.Tests.ps1[test file].

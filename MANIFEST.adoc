@@ -1,6 +1,6 @@
 == Yes
 
-xref:yes.ps1[]
+xref:challenges/yes.ps1[yes.ps1]
 
 === challenge
 
@@ -23,7 +23,7 @@ PS> .\yes.ps1
 
 == 4 Billion If Statements
 
-xref:4billionifs.ps1[]
+xref:challenges/4billionifs.ps1[4billionifs.ps1]
 
 === challenge
 
@@ -47,7 +47,7 @@ PS> .\4billionifs.ps1 > foo.ps1
 
 == Incremental Game Time Format
 
-xref:incremental-game-datetime.ps1[]
+xref:challenges/incremental-game-datetime.ps1[incremental-game-datetime.ps1]
 
 === challenge
 
@@ -74,7 +74,7 @@ See xref:tests/incremental-game-datetime.Tests.ps1[test file].
 
 == PowXn
 
-xref:PowXn.ps1[]
+xref:challenges/PowXn.ps1[PowXn.ps1]
 
 === challenge
 
@@ -97,7 +97,7 @@ See xref:tests/pownx.Tests.ps1[test file].
 
 == Valid Phone Numbers
 
-xref:valid-phone-numbers.ps1[]
+xref:challenges/valid-phone-numbers.ps1[valid-phone-numbers.ps1]
 
 === challenge
 

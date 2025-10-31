@@ -41,7 +41,7 @@ jobs:
       
       - name: Upload Pester reports
         if: ${{ success() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: pester-report
           path: |

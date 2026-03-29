@@ -118,3 +118,28 @@ https://leetcode.com/problems/valid-phone-numbers/description/[Leetcode]
 === example use case(s)
 
 See xref:tests/valid-phone-numbers.Tests.ps1[test file].
+
+== 12 Hour to 24 Hour Time
+
+xref:challenges\12hr-to-24hr.ps1[12hr-to-24hr.ps1]
+
+=== challenge
+
+https://codegolf.stackexchange.com/questions/105858/[Stack Exchange]
+
+=== requirements
+
+* Input as HH:MM am/pm.
+** The space separating the am/pm from the rest of the time is optional.
+** Can either be "am"/"pm", or "a"/"p".
+** Any capitalization is fine.
+* Midnight can be either 0000/2400, must be AM.
+* Noon is PM.
+
+=== stats
+
+* 27 bytes
+
+=== example use case(s)
+
+See xref:tests/12hr-to-24hr.Tests.ps1[test file].

@@ -32,12 +32,9 @@ jobs:
       
       - name: Run Pester Tests
         shell: pwsh
-        # Pester results will go into a new  folder called "pester".
+        # Pester results post to .\tests\results\
         run: |
-          New-Item -Path ".\pester" -type Directory
-          .\utils\pester-agent.ps1 -TestPath ".\tests\incremental-game-datetime.Tests.ps1" -OutputFile "pester\incremental-game-datetime-pester-results.xml" -CodeCoverageFile "pester\incremental-game-datetime-pester-coverage.xml"
-          .\utils\pester-agent.ps1 -TestPath ".\tests\powxn.Tests.ps1" -OutputFile "pester\powxn-pester-results.xml" -CodeCoverageFile "pester\powxn-pester-coverage.xml"
-          .\utils\pester-agent.ps1 -TestPath ".\tests\valid-phone-numbers.Tests.ps1" -OutputFile "pester\valid-phone-numbers-pester-results.xml" -CodeCoverageFile "pester\valid-phone-numbers-pester-coverage.xml"
+          ./run-codegolf-tests.ps1
       
       - name: Upload Pester reports
         if: ${{ success() }}
@@ -45,7 +42,7 @@ jobs:
         with:
           name: pester-report
           path: |
-            pester/
+            tests/results/
           if-no-files-found: warn
           retention-days: 0
           compression-level: 6

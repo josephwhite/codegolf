@@ -11,4 +11,4 @@ Describe "valid-phone-numbers.ps1" {
             $res | Should -Match '^(\d{3}-|\(\d{3}\) )\d{3}-\d{4}$'
         }
     }
- }
+}
